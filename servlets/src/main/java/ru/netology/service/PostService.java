@@ -29,7 +29,7 @@ public class PostService {
         Post post = getById(id);
         if (post != null) {
             post.setContent(content);
-            repository.update(post);
+            repository.save(post);
         }
     }
 

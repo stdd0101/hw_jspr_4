@@ -23,14 +23,24 @@ public class PostRepository {
     }
 
     public Post save(Post post) {
-        long newId = id.incrementAndGet();
-        map.put(newId, post);
-        return post;
+        if (map.containsKey(id)) {
+            return map.put(post.getId(), post);
+        } else {
+            long newId = id.incrementAndGet();
+            map.put(newId, post);
+            return post;
+        }
     }
 
-    public void update(Post post) {
-        map.replace(post.getId(), post);
-    }
+//    public Post save(Post post) {
+//        long newId = id.incrementAndGet();
+//        map.put(newId, post);
+//        return post;
+//    }
+//
+//    public void update(Post post) {
+//        map.replace(post.getId(), post);
+//    }
 
 //
 //  public Post update(Post post, String content) {
