@@ -23,7 +23,7 @@ public class PostRepository {
     }
 
     public Post save(Post post) {
-        if (map.containsKey(id)) {
+        if (map.containsKey(post.getId())) {
             return map.put(post.getId(), post);
         } else {
             long newId = id.incrementAndGet();
