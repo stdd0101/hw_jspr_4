@@ -6,7 +6,10 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.stereotype.Repository;
+
 // Stub
+@Repository
 public class PostRepository {
     private AtomicInteger id = new AtomicInteger(1);
     private Map<Long, Post> map = new ConcurrentHashMap<>();
