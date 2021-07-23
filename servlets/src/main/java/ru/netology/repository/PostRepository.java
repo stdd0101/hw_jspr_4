@@ -1,7 +1,5 @@
 package ru.netology.repository;
-
 import ru.netology.model.Post;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,13 +20,24 @@ public class PostRepository {
         return Optional.empty();
     }
 
+//    public Post save(Post post) {
+//        if (map.containsKey(post.getId())) {
+//            return map.put(post.getId(), post);
+//        } else {
+//            long newId = id.incrementAndGet();
+//            map.put(newId, post);
+//            return post;
+//        }
+//    }
+
     public Post save(Post post) {
-        if (map.containsKey(post.getId())) {
-            return map.put(post.getId(), post);
-        } else {
+        if (post.getId() == 0) {
             long newId = id.incrementAndGet();
+            post.setId(newId);
             map.put(newId, post);
             return post;
+        } else {
+            return map.put(post.getId(), post);
         }
     }
 

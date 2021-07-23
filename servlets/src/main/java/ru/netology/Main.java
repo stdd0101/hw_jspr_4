@@ -11,7 +11,7 @@ public class Main {
         Class<?> aClass = Class.forName("ru.netology.servlet.MainServlet");
         Servlet servlet = (Servlet) aClass.getConstructor().newInstance();
         servlet.init(null);
-        servlet.service(null, null);
-        servlet.destroy();
+        //servlet.service(null, null);
+        //servlet.destroy();
     }
 }
