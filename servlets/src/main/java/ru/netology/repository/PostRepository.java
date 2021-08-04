@@ -1,12 +1,14 @@
 package ru.netology.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.netology.model.Post;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import org.springframework.stereotype.Repository;
 
 // Stub
 @Repository
@@ -34,24 +36,6 @@ public class PostRepository {
             return post;
         }
     }
-
-//    public Post save(Post post) {
-//        long newId = id.incrementAndGet();
-//        map.put(newId, post);
-//        return post;
-//    }
-//
-//    public void update(Post post) {
-//        map.replace(post.getId(), post);
-//    }
-
-//
-//  public Post update(Post post, String content) {
-//    post.setContent(content);
-//    map.put(post.getId(), post);
-//    return post;
-//  }
-
     public void delete(Post post) {
         map.remove(post.getId());
     }

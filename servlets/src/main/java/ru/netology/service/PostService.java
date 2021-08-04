@@ -42,6 +42,5 @@ public class PostService {
             repository.delete(post);
         }
     }
-
 }
 
