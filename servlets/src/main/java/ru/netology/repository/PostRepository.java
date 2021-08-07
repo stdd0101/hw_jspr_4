@@ -9,8 +9,6 @@ public class PostRepository {
     private AtomicInteger id = new AtomicInteger(1);
     private Map<Long, Post> map = new ConcurrentHashMap<>();
 
-    //public List<Post> all() {return Collections.emptyList();}
-
     public List<Post> all() {
         List<Post> posts = new ArrayList<Post>(map.values());
         return posts;
@@ -40,23 +38,6 @@ public class PostRepository {
             return map.put(post.getId(), post);
         }
     }
-
-//    public Post save(Post post) {
-//        long newId = id.incrementAndGet();
-//        map.put(newId, post);
-//        return post;
-//    }
-//
-//    public void update(Post post) {
-//        map.replace(post.getId(), post);
-//    }
-
-//
-//  public Post update(Post post, String content) {
-//    post.setContent(content);
-//    map.put(post.getId(), post);
-//    return post;
-//  }
 
     public void delete(Post post) {
         map.remove(post.getId());
